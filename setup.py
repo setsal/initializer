@@ -1,6 +1,6 @@
 import subprocess
 
-from setuptools import Command, setup
+from setuptools import Command, setup, find_packages
 from setuptools.command.install import install
 
 
@@ -24,7 +24,7 @@ class InitCommand(Command):
 setup(
     name='ult-initializer',
     version='0.1.0',
-    packages=['ult-initializer'],
+    packages=find_packages(),
     install_requires=[
         'clang-format',    # for C/C++ formatting
         'yapf',    # for Python formatting
