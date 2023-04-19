@@ -4,8 +4,11 @@ repos:
     hooks:
       - id: clang-format
         args: [--style=file] # use the .clang-format file in the root of the repository
-  - repo: https://github.com/pre-commit/mirrors-yapf
-    rev: v0.31.0 # choose the version that works for your project
+  - repo: local
     hooks:
       - id: yapf
-        args: [--style=.style.yapf] # use the yapf config file in the root of the repository
+        name: yapf
+        language: python
+        entry: yapf
+        args: [-i, -vv, --style=.style.yapf]
+        types: [python]

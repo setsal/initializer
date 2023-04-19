@@ -14,10 +14,10 @@ class InitCommand(Command):
         pass
 
     def run(self):
-        subprocess.call(['echo', 'hi'])
+        # subprocess.call(['echo', 'hi'])
         # Set up git commit hooks
-        # import pre_commit.main as pre_commit
-        # pre_commit(['install'])
+        import pre_commit.main as pre_commit
+        pre_commit(['install'])
         # # Do additional setup here
 
 
